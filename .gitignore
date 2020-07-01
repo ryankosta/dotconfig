@@ -1,0 +1,14 @@
+#Ignore Files/Dirs in base directory AKA Level 1 (base ignore)
+/*
+#Except Level 1 Files
+!.gitignore
+!README.md
+
+#Except Level 1 Dirs 
+!/i3/
+!/i3status/
+!/scripts/
+!/vim/
+
+#Ignore Level 2 Dirs 
+/vim/plugged/

@@ -1,0 +1,31 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+	  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+	      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+""" Plugins
+Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-fugitive'
+" Prob going to remove this plugin in future after I decide colorscheme
+Plug 'flazz/vim-colorschemes'
+
+""" Plugin List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+
+" Enable default ycm config
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+
+" Macros
+autocmd filetype cpp nnoremap <F6> :Termdebug %:r<CR><c-w>2j<c-w>L
+
+" set colorscheme
+colorscheme OceanicNext 
+	
+" Set commands
+set encoding=utf-8
+set number
