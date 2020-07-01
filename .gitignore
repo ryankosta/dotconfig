@@ -9,6 +9,7 @@
 !/i3status/
 !/scripts/
 !/vim/
+!/bash/
 
 #Ignore Level 2 Dirs 
 /vim/plugged/

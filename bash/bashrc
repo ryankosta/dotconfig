@@ -1,0 +1,31 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+### User specific aliases and functions
+BASHSCRIPTDIR=~/.config/bash/scripts
+#Git completion
+if [ -f $BASHSCRIPTDIR/git-completion.bash ];
+then
+	source $BASHSCRIPTDIR/git-completion.bash
+fi
+#Git prompt
+PROMPTCHAR=\$
+
+if [ -f $BASHSCRIPTDIR/git-prompt.sh ]; then
+	source $BASHSCRIPTDIR/git-prompt.sh
+	export PS1='\W$(__git_ps1 "(%s)") $PROMPTCHAR '
+fi
