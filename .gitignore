@@ -12,3 +12,5 @@
 
 #Ignore Level 2 Dirs 
 /vim/plugged/
+#Ignore Filetypes
+**.swp
